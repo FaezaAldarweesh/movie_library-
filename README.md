@@ -48,6 +48,10 @@ Example API Request:GET /api/movie?per_page=5&genre=action&director=John+Doe&rel
 
 ## Postman documentation link:
 https://documenter.getpostman.com/view/34467473/2sAXjF9FSw
+in this documentation you have two variables :
+
+- url : the link of server
+- token : to change it after do sginup or login 
 
 ## Contact
 For any inquiries or support, please reach out to Faeza Aldarweesh at faeza.aldarweesh@gmail.com
