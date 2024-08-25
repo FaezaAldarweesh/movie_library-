@@ -12,7 +12,6 @@ Sorting: Sort movies by release year in ascending or descending order.
 - API Support: Access and manage movie data via a RESTful API.
 
 **Installation**
-requisites:
 - PHP 7.x or higher
 - Composer
 - Laravel 8.x or higher
