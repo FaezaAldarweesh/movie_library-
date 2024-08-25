@@ -1,66 +1,55 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Overview
+Movie Library is a web application that allows users to browse, filter, sort, and manage a collection of movies and rating this movie after doing sign up or log in.
+The app includes features for pagination, filtering by genre or director, and sorting by release year. 
+It also includes functionality for user authentication, rating movies, and managing movie data through an API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Features
+- Movie Browsing:Browse through a collection of movies with pagination support.
+- Filtering: Filter movies by genre or director.
+Sorting: Sort movies by release year in ascending or descending order.
+- User Authentication:Register and login to manage your own movie ratings.
+- Rating System:Users can rate movies, and only users who have rated a movie can update or delete their ratings.
+- API Support: Access and manage movie data via a RESTful API.
 
-## About Laravel
+**Installation**
+requisites:
+- PHP 7.x or higher
+- Composer
+- Laravel 8.x or higher
+- MySQL or any supported database
+- Gitbash
+  
+**Steps:**
+- Clone the repository:git clone https://github.com/FaezaAldarweesh/movie_library.git
+- composer install
+- cp .env.example .env
+- php artisan key:generate
+- php artisan migrate
+- php artisan serve
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## API Endpoint
+**movie:**
+- GET /api/movie: Get a list of movies (supports pagination, filtering, and sorting).
+- POST /api/movie: Add a new movie.
+- GET /api/movie/{id}: Get details of a specific movie.
+- PUT /api/movie/{id}: Update movie details.
+- DELETE /api/movie/{id}: Delete a movie.
+  
+Filtering Movies: Use genre and director query parameters to filter movies.
+Sorting Movies: Use release_year and order query parameters to sort movies by release year.
+Pagination: Use the per_page query parameter to control the number of movies displayed per page
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Example API Request:GET /api/movie?per_page=5&genre=action&director=John+Doe&release_year=desc
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Ratings:**
+- POST /api/rating: Add a rating to a movie (requires authentication).
+- GET /api/rating/{rating}: Get details of a specific rating.
+- PUT /api/rating/{rating}: Update movie details (only by the user who created it).
+- DELETE /api/rating/{id_rating}: Delete a rating (only by the user who created it).
 
-## Learning Laravel
+## Postman documentation link:
+https://documenter.getpostman.com/view/34467473/2sAXjF9FSw
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Contact
+For any inquiries or support, please reach out to Faeza Aldarweesh at faeza.aldarweesh@gmail.com
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
